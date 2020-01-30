@@ -1,20 +1,21 @@
 import React from 'react';
 import { Normalize } from 'styled-normalize';
 import { Navbar, Container } from './navbar/navbar';
-import { Angry } from 'styled-icons/fa-regular';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import * as icons from "@fortawesome/free-solid-svg-icons";
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 interface ButProp {
-  icon?: IconDefinition;
+  iconLeft?: IconDefinition;
+  iconRight?: IconDefinition;
 }
 
-const Button: React.FC<ButProp> = ({children, icon}) => {
+const Button: React.FC<ButProp> = ({children, iconLeft, iconRight}) => {
  return <button>
-   {icon && <FontAwesomeIcon icon={icon} />}
+   {iconLeft && <FontAwesomeIcon icon={iconLeft} />}
    {children}
- </button> 
+   {iconRight && <FontAwesomeIcon icon={iconRight} />}
+ </button>
 }
 
 const App: React.FC = () => {
@@ -26,7 +27,6 @@ const App: React.FC = () => {
       <Container>Cheese</Container>
     </Navbar>
 
-    <Angry size="1em" />
     <FontAwesomeIcon icon={icons.faArrowDown} />
     
     <div className="typography">
@@ -67,7 +67,7 @@ const App: React.FC = () => {
       <span>Submit</span>
       <FontAwesomeIcon icon={icons.faArrowRight} />
     </Button>
-    <Button icon={icons.faArrowLeft}>
+    <Button iconLeft={icons.faArrowLeft} iconRight={icons.faArrowRight}>
       <span>Submit</span>
     </Button>
     <button type="reset">Reset</button>
