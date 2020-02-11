@@ -19,7 +19,7 @@ const Button: React.FC<ButProp> = ({children, icon}) => {
     {icon && <FontAwesomeIcon icon={icon}/>}
     {children}
   </button>
-}
+};
 
 const App: React.FC = () => {
   return (

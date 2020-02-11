@@ -1,7 +1,7 @@
 const colors = {
-  primary: '#99cc00',
+  primary: '#123432',
   black: '#000',
-  white: '#fff'
+  white: '#f4f4f4'
 };
 
 const fontFamilySansSerif = '\'Roboto\', Helvetica Neue, Helvetica, Arial, sans-serif';

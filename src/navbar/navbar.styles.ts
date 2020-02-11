@@ -2,7 +2,7 @@ import styled, {createGlobalStyle} from 'styled-components';
 
 export const NavbarStyle = styled.nav`
   width: 100%;
-  background: #123432;
+  background: ${props => props.theme.colors.primary};
   color: #fff;
   font-size: ${props => props.theme.layout.navbar.fontSize};
   position: ${props => props.theme.layout.navbar.fixed ? 'fixed' : 'static'};
@@ -21,8 +21,8 @@ export const NavbarMenuStyle = styled.div<NavbarMenuProps>`
   top: ${props => props.theme.layout.navbar.height};
   left: 0;
   height: 100%;
-  background: #123432;
-  color: white;
+  background: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.white};
   
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
     position: static;
@@ -48,7 +48,7 @@ export const Container = styled.div<ContainerProps>`
   padding: 0 0.5rem;
   
   // ${NavbarStyle} & {
-  //   color: white;
+  //   color: ${props => props.theme.colors.white};
   // }
     
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
@@ -82,14 +82,14 @@ export const NavbarDropdownTitle = styled.span`
     align-items: center;
     :hover {
       background: #fff;
-      color: #123432;
+      color: ${props => props.theme.colors.primary};
     }
   }
 `;
 
 
 export const NavbarDropdown = styled.div`
-  color: white;
+  color: ${props => props.theme.colors.white};
   text-decoration: none;
   display: block;
   margin: 0.25em 0;
@@ -101,7 +101,7 @@ export const NavbarDropdown = styled.div`
 `;
 
 export const NavbarDropdownContent = styled.div`
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid ${props => props.theme.colors.white};
   padding-bottom: 1rem;
 
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
@@ -113,7 +113,7 @@ export const NavbarDropdownContent = styled.div`
 
     ${NavbarDropdown}:hover & {
       display: block;
-      background: #123432;
+      background: ${props => props.theme.colors.primary};
       padding: 0;
     }
   }
@@ -122,14 +122,14 @@ export const NavbarDropdownContent = styled.div`
 export const NavbarLink = styled.a`
   display: flex;
   
-  color: white;
+  color: ${props => props.theme.colors.white};
   text-decoration: none;
   margin: 0.25em 0;
   padding: 0 1rem;
   
   :hover {
     background: #fff;
-    color: #123432;
+    color: ${props => props.theme.colors.primary};
   }
   
   @media (min-width: ${props => props.theme.breakpoints.desktop}) {
